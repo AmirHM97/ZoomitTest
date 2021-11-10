@@ -31,28 +31,5 @@ namespace ZoomitTest.Controllers
 
 
         }
-        [HttpGet]
-        public async Task<ActionResult> test(string url)
-        {
-            var list = new List<string>();
-            while (!string.IsNullOrEmpty(url))
-            {
-                try
-                {
-                    url = url.Substring(0, url.LastIndexOf("/"));
-                    list.Add(url);
-
-                }
-                catch (System.Exception)
-                {
-                    break;
-                }
-                // url = url[..(url.LastIndexOf("/"))];
-            }
-            return Ok(list);
-
-
-        }
-
     }
 }
